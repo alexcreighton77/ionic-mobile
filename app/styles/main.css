@@ -1,0 +1,11 @@
+/* Your application styles go here */
+
+
+.button-vertical-center{
+
+	margin: auto;
+	bottom: 8px; /* buttons have 8px top in list item*/
+	height: 50%;
+	position: absolute;
+
+}

@@ -1,0 +1,79 @@
+<ion-view title="Home">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+  GPS: {{myLat}}, {{myLng}}
+  	<div class="list">
+  		<div class="item item-divider">
+    		Social Media Status
+  		</div>
+  		<div ng-if="!isFacebookSync" class="item item-icon-left item-button-right">
+        <i class="icon ion-social-facebook positive"></i>
+        <h2>Facebook</h2>
+        <p>Status: Logged out</p>
+		    <button class="button button-positive button-vertical-center" ng-click="socialLogin('facebook')">Login</button>
+  		</div>
+  		<div ng-if="isFacebookSync" class="item item-icon-left item-button-right">
+        <i class="icon ion-social-facebook positive"></i>
+		    <h2>Facebook</h2>
+        <p>Status: Logged in</p>
+		    <button class="button button-positive button-vertical-center" ng-click="viewSocialProfile('facebook')">View Profile</button>
+  		</div>
+    		<div ng-if="!isTwitterSync" class="item item-icon-left item-button-right">
+        <i class="icon ion-social-twitter calm"></i>
+        <h2>Twitter</h2>
+        <p>Status: Logged out</p>
+  		  <button class="button button-positive button-vertical-center" ng-click="socialLogin('twitter')">Login</button>
+  		</div>
+  		<div ng-if="isTwitterSync" class="item item-icon-left item-button-right">
+        <i class="icon ion-social-twitter calm"></i>
+        <h2>Twitter</h2>
+        <p>Status: Logged in</p>
+  		  <button class="button button-positive button-vertical-center" ng-click="viewSocialProfile('twitter')">View Profile</button>
+  		</div>
+    </div>
+    <div ng-if="profileView">
+      <div class="list">
+        <div class="item item-divider">
+          Profile
+        </div>
+
+        <div class="item item-thumbnail-left">
+          <img ng-src="{{socialProfile.thumbnail}}">
+          <h2>Name</h2>
+          <p>{{socialProfile.name}}</p>
+        </div>
+        <div class="item">
+          <h2>ID</h2>
+          <p>{{socialProfile.id}}</p>
+        </div>
+        <div class="item">
+          <h2>Name</h2>
+          <p>{{socialProfile.name}}</p>
+        </div> 
+        <div class="item">
+          <h2>Username</h2>
+          <p>{{socialProfile.screenName}}</p>
+        </div>
+        <div class="item">
+          <h2>First Name</h2>
+          <p>{{socialProfile.firstName}}</p>
+        </div> 
+        <div class="item">
+          <h2>Last Name</h2>
+          <p>{{socialProfile.lastName}}</p>
+        </div>
+        <div class="item">
+          <h2>Language</h2>
+          <p>{{socialProfile.language}}</p>
+        </div>                   
+      </div>
+
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+    <a class="button icon ion-home button-clear button-dark button-large" ng-click="goHome()"></a>
+    <a class="button icon ion-gear-a button-clear button-dark button-large" ng-click="goSettings()"></a>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,96 @@
+<ion-view title="Settings">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+	<label class="item item-input item-select">
+		<div class="input-label">
+		  Lightsaber
+		</div>
+		<select ng-model="settings.itemSelect">
+		  <option value=0>Blue</option>
+		  <option value=1>Green</option>
+		  <option value=2>Red</option>
+		</select>
+	</label>
+  	<div class="list">
+	  <div class="item range range-positive">
+	    <i class="icon ion-ios7-sunny-outline"></i>
+	    <input type="range" ng-model="settings.sliderBar" name="volume" min="0" max="100" value="33">
+	    <i class="icon ion-ios7-sunny"></i>
+	  </div>
+	</div>
+	<div class="list">
+	  <label class="item item-radio">
+	    <input type="radio" ng-model="settings.radio" value=0 name="group">
+	    <div class="item-content">
+	      Rock
+	    </div>
+	    <i class="radio-icon ion-checkmark"></i>
+	  </label>
+	  <label class="item item-radio">
+	    <input type="radio" ng-model="settings.radio" value=1 name="group">
+	    <div class="item-content">
+	      Paper
+	    </div>
+	    <i class="radio-icon ion-checkmark"></i>
+	  </label>
+	  <label class="item item-radio">
+	    <input type="radio" ng-model="settings.radio" value=2 name="group">
+	    <div class="item-content">
+	      Scissors
+	    </div>
+	    <i class="radio-icon ion-checkmark"></i>
+	  </label>
+	</div>
+	<ul class="list">
+		<li class="item item-toggle">
+			Switch 1
+			<label class="toggle toggle-positive">
+				<input type="checkbox" ng-model="settings.switch1">
+				<div class="track">
+	 				<div class="handle"></div>
+				</div>
+			</label>
+		</li>
+		<li class="item item-toggle">
+			Switch 2
+			<label class="toggle toggle-assertive">
+				<input type="checkbox" ng-model="settings.switch2">
+				<div class="track">
+	 				<div class="handle"></div>
+				</div>
+			</label>
+		</li>
+	</ul>
+	<ul class="list">
+
+	  <li class="item item-checkbox">
+	     <label class="checkbox">
+	       <input type="checkbox" ng-model="settings.check1">
+	     </label>
+	     Coffee
+	  </li>
+	  <li class="item item-checkbox">
+	     <label class="checkbox">
+	       <input type="checkbox" ng-model="settings.check2">
+	     </label>
+	     Headphones
+	  </li>
+	  <li class="item item-checkbox">
+	     <label class="checkbox">
+	       <input type="checkbox" ng-model="settings.check3">
+	     </label>
+	     Music
+	  </li>
+
+	</ul>
+		
+  </ion-content>
+
+  <ion-footer-bar>
+    <a class="button button-clear button-dark" ng-click="cancelSettings()">Cancel</a>
+    <a class="button button-clear button-dark" ng-click="saveSettings(settings)">Save</a>
+  </ion-footer-bar>
+
+</ion-view>
